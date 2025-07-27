@@ -1,0 +1,98 @@
+.create-message {
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+    color: #0f5132;
+    padding: 10px 0;
+}
+
+.create-message__inner {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding-left: 30px;
+}
+
+.index-content {
+    margin-top: 30px;
+}
+
+.index-content__inner {
+    margin: 0 auto;
+    max-width: 920px;
+}
+
+.todo-create {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.todo-create__txt {
+    width: 650px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.todo-create__button {
+    padding: 10px;
+    width: 20%;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.todo-board {
+    margin-top: 50px;
+    color: #000;
+}
+
+.todo-board__title {
+    font-size: 24px;
+    padding-left: 15px;
+}
+
+.todo-list {
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    font-weight: 600;
+}
+
+.todo-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.todo-item__name {
+    padding-left: 15px;
+}
+
+.todo-item__button {
+    padding-right: 15px;
+}
+
+.todo-list__item-button-update {
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background: blue;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.todo-list__item-button-delete {
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background: red;
+    color: #fff;
+    cursor: pointer;
+}
