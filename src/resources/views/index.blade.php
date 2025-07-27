@@ -11,28 +11,28 @@
     </div>
     <div class="index-content">
         <div class="index-content__inner">
-            <div class="todo-create">
-                <input type="text" class="todo-create__txt">
-                <input type="button" class="todo-create__button" value="作成">
-            </div>
+            <form class="todo-create" method="post" action="/todos">
+                @csrf
+                <input type="text" class="todo-create__txt" name="content">
+                <button class="todo-create__button" type="submit">作成
+                </button>
+            </form>
             <div class="todo-board">
                 <h3 class="todo-board__title">Todo</h3>
-                <div class="todo-list">
+                <form class="todo-form">
+                    @foreach ($todos as $todo)
                     <div class="todo-item">
-                        <p class="todo-item__name">test</p>
+                        <p class="todo-item__name">{{ $todo->content }}</p>
                         <div class="todo-item__button">
-                            <input type="button" value="更新" class="todo-list__item-button-update">
-                            <input type="button" value="削除" class="todo-list__item-button-delete">
+                            <button type="submit" class="todo-list__item-button-update">
+                            更新
+                            </button>
+                            <button class="todo-list__item-button-delete" type="submit">削除
+                            </button>
                         </div>
                     </div>
-                    <div class="todo-item">
-                        <p class="todo-item__name">test2</p>
-                        <div class="todo-item__button">
-                            <input type="button" value="更新" class="todo-list__item-button-update">
-                            <input type="button" value="削除" class="todo-list__item-button-delete">
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                </form>
             </div>
         </div>
     </div>
