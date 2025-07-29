@@ -5,10 +5,22 @@
 
 @section('content')
     <div class="create-message">
-        <div class="create-message__inner">
-            Todoを作成しました
-        </div>
+        @if (session('message'))
+            <div class="create-message--success">
+                {{ session('message') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="create-message--fail">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
+
     <div class="index-content">
         <div class="index-content__inner">
             <form class="todo-create" method="post" action="/todos">
@@ -19,20 +31,26 @@
             </form>
             <div class="todo-board">
                 <h3 class="todo-board__title">Todo</h3>
-                <form class="todo-form">
-                    @foreach ($todos as $todo)
+                @foreach ($todos as $todo)
                     <div class="todo-item">
-                        <p class="todo-item__name">{{ $todo->content }}</p>
-                        <div class="todo-item__button">
-                            <button type="submit" class="todo-list__item-button-update">
-                            更新
+                        <form class="todo-item__update-form" method="post" action="todos/update">
+                            @method('PATCH')
+                            @csrf
+                            <input class="todo-item__name" type="text" name="content" value="{{ $todo['content'] }}">
+                            <input type="hidden" name="id" value="{{ $todo['id'] }}">
+                            <button type="submit" class="todo__item-button-update">
+                                更新
                             </button>
-                            <button class="todo-list__item-button-delete" type="submit">削除
+                        </form>
+                        <form class="todo-item__delete-form" method="post" action="todos/delete">
+                            @method('DELETE')
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $todo['id'] }}">
+                            <button class="todo__item-button-delete" type="submit">削除
                             </button>
-                        </div>
+                        </form>
                     </div>
-                    @endforeach
-                </form>
+                @endforeach
             </div>
         </div>
     </div>

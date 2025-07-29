@@ -1,18 +1,27 @@
+li {
+    list-style-type: none;
+}
+
 .create-message {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.create-message--success {
     background-color: #d1e7dd;
     border: 1px solid #badbcc;
     color: #0f5132;
-    padding: 10px 0;
+    padding: 10px 0 10px 30px;
 }
 
-.create-message__inner {
-    max-width: 1230px;
-    margin: 0 auto;
-    padding-left: 30px;
+.create-message--fail {
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    color: #842029;
 }
 
 .index-content {
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 .index-content__inner {
@@ -53,15 +62,13 @@
     padding-left: 15px;
 }
 
-.todo-form {
-}
-
 .todo-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #ddd;
     font-weight: 600;
+    padding: 10px 0;
 }
 
 .todo-item:last-child {
@@ -70,13 +77,21 @@
 
 .todo-item__name {
     padding-left: 15px;
+    border: none;
+    outline: none;
+}
+
+.todo-item__update-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .todo-item__button {
     padding-right: 15px;
 }
 
-.todo-list__item-button-update {
+.todo__item-button-update {
     width: 60px;
     height: 30px;
     border: none;
@@ -87,7 +102,7 @@
     margin-right: 10px;
 }
 
-.todo-list__item-button-delete {
+.todo__item-button-delete {
     width: 60px;
     height: 30px;
     border: none;
@@ -95,4 +110,5 @@
     background: red;
     color: #fff;
     cursor: pointer;
+    margin-right: 10px;
 }
