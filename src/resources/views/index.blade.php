@@ -62,9 +62,6 @@
                                         value="{{ $todo['content'] }}" />
                                     <input type="hidden" name="id" value="{{ $todo['id'] }}" />
                                 </div>
-                                <div class="update-form__item">
-                                    <p class="update-form__item-p">Category 1</p>
-                                </div>
                                 <div class="update-form__button">
                                     <button class="update-form__button-submit" type="submit">
                                         更新
@@ -76,6 +73,7 @@
                             <form class="delete-form" action="/todos/delete" method="post">
                                 @method('DELETE') @csrf
                                 <div class="delete-form__button">
+                                    <input type="hidden" name="id" value="{{ $todo['id'] }}">
                                     <button class="delete-form__button-submit" type="submit">
                                         削除
                                     </button>
