@@ -103,8 +103,7 @@
     justify-content: space-between;
 }
 .update-form__item {
-    width: 80%;
-    width: 40%;
+    width: 50%;
     line-height: 50%;
 }
 .update-form__item-input {
